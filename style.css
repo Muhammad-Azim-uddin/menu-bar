@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+nav{
+    background-color: black;
+    margin: 0px auto;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+
+
+}
+nav ul li{
+    display:inline-block;
+    margin: 0px 10px;  
+    transition: 0.4s;
+}
+nav ul li a{
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    padding: 30px 10px 30px;
+    position: relative;
+    transition: 0.5s;
+}
+nav ul li a:hover{
+    background-color: rgb(199, 130, 162);
+}
+
+nav ul li a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom:10px;
+    left: 0;
+    visibility: hidden;
+    background: rgb(165, 165, 192);
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    visibility: visible;
+    width: 0%;
+}
+
+/* first drop down */
+
+nav .parent{
+    position: relative ;
+}
+.parent .child{
+    position: absolute;
+    top:100%;
+    color:black;
+    display: block;
+    width: 300px;
+    /* visibility: hidden; */
+    background-color: rgba(0, 0, 0, 0.651);
+    transition: 0.4s;
+}
+.parent .child{
+    display: none;
+}
+.parent .child li{
+    width: 100%;
+    margin:0;
+    display: block;
+}
+.parent .child li a{
+    display: block;
+    width: 100%;
+}
+.parent:hover .child{
+    display: block;
+}
+
+/* sub sub menu */
+
+.parent .sub-parent{
+    position: relative;
+}
+
+.parent .sub-parent .sub-child{
+    position: absolute;
+    display: block;
+    left:100%;
+    top:0;
+    width: 200px;
+    background-color: rgb(107, 108, 109);
+}
+
+.sub-parent.sub-child li{
+    display: block;
+    width: 100%;
+}
+
+.parent .sub-child li a{
+    width: 100%;
+    display: block;
+}
+.sub-parent.sub-child{
+    display: none;
+}
+.sub-parent:hover.sub-child{
+    display: block;
+    visibility: visible;
+}
